@@ -4,6 +4,13 @@ import glob
 import time
 
 def create_timelapse(output_folder, output_video_mp4, fps=1):
+    """
+    Create a time-lapse video from a folder of images.
+
+    :param output_folder: Path to the folder containing the images.
+    :param output_video_mp4: Path to save the output video (.mp4).
+    :param fps: Frames per second for the output video (default=1).
+    """
     # Get list of all PNG files in the output folder
     images = glob.glob(os.path.join(output_folder, "*.png"))
 
@@ -41,7 +48,6 @@ def create_timelapse(output_folder, output_video_mp4, fps=1):
     video_mp4.release()
     print(f"Time-lapse video saved as {output_video_mp4}")
 
-# Example usage
 output_folder = "D:/Uni/GAN_powered_Pokemon_Generation/lab/output"
 output_video_mp4 = "D:/Uni/GAN_powered_Pokemon_Generation/lab/timelapse.mp4"
 create_timelapse(output_folder, output_video_mp4)
